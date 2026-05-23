@@ -486,12 +486,12 @@ textarea {
 
 .status-settled {
   background: var(--accent-green);
-  color: #000000;
+  color: var(--card) !important;
 }
 
 .status-pending {
   background: var(--accent-yellow);
-  color: var(--card);
+  color: var(--card) !important;
 }
 
 .list-item .edit-btn {
