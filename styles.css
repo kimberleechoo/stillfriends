@@ -1,0 +1,636 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #F8F5E6;
+  --bg: #000000;
+  --surface: #1A1A1A;
+  --card: #242424;
+  --elevated: #2E2E2E;
+  --border: #3A3A3A;
+  --surface-soft: rgba(248, 245, 230, 0.08);
+  --surface-soft-strong: rgba(248, 245, 230, 0.14);
+  --text: #F8F5E6;
+  --muted: #B0B0B0;
+  --primary: #0051FF;
+  --secondary: #FF5A8D;
+  --accent-yellow: #FFD166;
+  --accent-green: #00E0B6;
+  --accent-pink: #fc568b;
+  --accent-blue: #0051FF;
+  --accent-rose: #d60447;
+  --accent-amber: #FFD166;
+  --accent-gold: #FFD166;
+  --accent-sky: #0051FF;
+  --accent-cream: #F8F5E6;
+  --surface-dark: #1A1A1A;
+  --card-gray: #242424;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  padding-bottom: 88px;
+}
+
+.app-shell {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.app-header {
+  padding: 18px 16px;
+  margin-bottom: 18px;
+  border-radius: 28px;
+  background: var(--surface);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.38);
+  border: 1px solid var(--border);
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: clamp(1.7rem, 2.5vw, 2.4rem);
+  color: var(--accent-cream);
+}
+
+.header-note {
+  margin-top: 12px;
+  color: var(--muted);
+}
+
+main {
+  display: grid;
+  gap: 18px;
+}
+
+.panel {
+  display: grid;
+  gap: 14px;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.45rem;
+  color: var(--accent-yellow);
+}
+
+.card {
+  background: var(--card);
+  border-radius: 22px;
+  padding: 18px;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.38);
+  border: 1px solid var(--border);
+}
+
+.manager-panel .card {
+  border-color: var(--border);
+  background: var(--card);
+}
+
+.itinerary-panel .card {
+  border-color: var(--border);
+  background: var(--card);
+}
+
+.receipts-panel .card {
+  border-color: var(--border);
+  background: var(--card);
+}
+
+.history-panel .card {
+  border-color: var(--border);
+  background: var(--card);
+}
+
+.summary-panel .card {
+  border-color: var(--border);
+  background: var(--card);
+}
+
+.manager-panel h2,
+.itinerary-panel h2,
+.receipts-panel h2,
+.history-panel h2,
+.summary-panel h2 { color: var(--accent-yellow); }
+
+.form-card label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px 14px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+}
+
+select {
+  color: var(--text);
+}
+
+option {
+  color: var(--text);
+  background: var(--bg);
+}
+
+#itinerary-extracted {
+  min-height: 110px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+#item-notes {
+  min-height: 48px;
+  overflow: hidden;
+  resize: none;
+}
+
+.format-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 8px;
+}
+
+.format-toolbar button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  background: var(--elevated);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 0.95rem;
+}
+
+#format-blue { background: var(--primary); color: #ffffff; }
+#format-pink,
+#format-rose { background: var(--secondary); color: #ffffff; }
+#format-amber,
+#format-gold { background: var(--accent-yellow); color: var(--card); }
+#format-green { background: var(--accent-green); color: #000000; }
+#format-link { background: var(--elevated); color: var(--accent-cream); }
+
+.inline-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0 0;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.inline-checkbox input {
+  width: 18px;
+  height: 18px;
+}
+
+.note-content a {
+  color: var(--accent-green);
+  text-decoration: underline;
+}
+
+.note-content a:hover {
+  color: var(--accent-cream);
+}
+
+.row,
+.button-row,
+.participants-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.row label {
+  flex: 1 1 180px;
+}
+
+.participants-row {
+  align-items: stretch;
+}
+
+.participants-row input {
+  flex: 1 1 auto;
+}
+
+.participants-row button {
+  /* flex: 0 0 110px; */
+}
+
+.primary-btn,
+.secondary-btn {
+  border: none;
+  border-radius: 14px;
+  padding: 12px 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.primary-btn {
+  background: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 14px 30px rgba(0, 81, 255, 0.28);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover,
+.danger-btn:hover {
+  transform: translateY(-1px);
+}
+
+.secondary-btn {
+  background: var(--secondary);
+  color: #ffffff;
+  border: 1px solid var(--secondary);
+}
+
+.danger-btn {
+  background: transparent;
+  color: var(--secondary);
+  border: 1px solid var(--secondary);
+}
+
+.bottom-actions {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  box-shadow: 0 -12px 30px rgba(0, 0, 0, 0.42);
+}
+
+.bottom-actions .primary-btn {
+  width: min(100%, 420px);
+}
+
+.scroll-top-btn {
+  position: fixed;
+  right: 16px;
+  bottom: calc(78px + env(safe-area-inset-bottom));
+  z-index: 21;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--accent-yellow);
+  border-radius: 50%;
+  background: var(--accent-yellow);
+  color: var(--card);
+  font-weight: 800;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.scroll-top-btn.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.paid-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.paid-toggle input {
+  width: 18px;
+  height: 18px;
+}
+
+.list-stack {
+  display: grid;
+  gap: 12px;
+}
+
+.list-item {
+  border-radius: 18px;
+  background: var(--surface);
+  padding: 16px;
+  border: 1px solid var(--border);
+}
+
+.list-item h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  color: #F8F5E6;
+}
+
+.itinerary-panel .list-item h3 {
+  font-size: 1.15rem;
+  color: var(--secondary);
+}
+
+.itinerary-day-card {
+  display: grid;
+  gap: 14px;
+  background: var(--card);
+  border-radius: 22px;
+  padding: 18px;
+}
+
+.itinerary-day-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.date-pill {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--accent-yellow);
+  color: #242424 !important;
+  font-weight: 500;
+}
+
+.day-count {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.itinerary-day-items {
+  display: grid;
+  gap: 12px;
+}
+
+.itinerary-entry {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  padding: 14px 0 0;
+  border-top: 1px solid var(--border);
+}
+
+.itinerary-entry:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.itinerary-entry-main {
+  min-width: 0;
+}
+
+.itinerary-entry .actions {
+  justify-content: flex-end;
+  margin-top: 0;
+}
+
+.itinerary-entry .actions button {
+  width: auto;
+  min-width: 76px;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+}
+
+.list-item p,
+.list-item span {
+  margin: 4px 0;
+  color: #D8D2C4;
+}
+
+.list-item .item-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 8px 0;
+  color: var(--muted);
+}
+
+.list-item .actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.list-item button {
+  border: none;
+  border-radius: 14px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.list-item .delete-btn {
+  background: var(--secondary);
+  color: #ffffff;
+}
+
+.share-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  margin: 10px 0 0;
+}
+
+.status-pill {
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.status-settled {
+  background: var(--accent-green);
+  color: #000000;
+}
+
+.status-pending {
+  background: var(--accent-yellow);
+  color: var(--card);
+}
+
+.list-item .edit-btn {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #F8F5E6;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tag button {
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.summary-panel .summary-card {
+  display: grid;
+  gap: 10px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+}
+
+.summary-row strong {
+  font-size: 1.05rem;
+}
+
+.hint {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.debt-options {
+  margin: 6px 0 14px;
+}
+
+.debt-list {
+  display: grid;
+  gap: 10px;
+}
+
+.debt-person-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 140px;
+  gap: 10px;
+  align-items: center;
+}
+
+.debt-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.debt-checkbox input,
+.share-row input {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+}
+
+.receipt-payment-section {
+  margin-top: 12px;
+}
+
+.receipt-payment-section h4 {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+  color: var(--accent-green);
+}
+
+.paid-state {
+  color: var(--accent-green);
+  font-weight: 700;
+}
+
+.unpaid-state {
+  color: var(--accent-amber);
+  font-weight: 700;
+}
+
+@media (max-width: 720px) {
+  .app-shell {
+    padding: 14px;
+  }
+
+  .row,
+  .button-row,
+  .participants-row {
+    flex-direction: column;
+  }
+
+  .row label {
+    flex-basis: auto;
+  }
+
+  .participants-row button,
+  .button-row button {
+    width: 100%;
+  }
+
+  .debt-person-row {
+    grid-template-columns: 1fr;
+  }
+
+  .itinerary-entry {
+    grid-template-columns: 1fr;
+  }
+}
+.bottom-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: flex-end;
+    align-items: center;
+}

@@ -1,0 +1,13 @@
+{
+  "name": "swiss-trip-planner",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "build": "echo \"No build required\""
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

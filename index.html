@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Still Friends!</title>
+  <link rel="icon" type="image/x-icon" href="./2178.gif">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Still Friends! &nbsp; <img src="./little-twin-stars-7.gif" alt="Twin Stars"></p>
+        <h1>Plan, Split, and Manage Your Trips></h1>
+        <p>and you're still friends after the trip!</p>
+      </div>
+      <!-- <div class="header-note">Create a journey, set a unique secret, and load it anywhere.</div> -->
+    </header>
+
+    <main>
+      <section class="panel manager-panel">
+        <h2>Trip manager</h2>
+        <div class="card form-card">
+          <label>
+            Journey secret key
+            <p class="hint">One secret saves and loads one journey. Use the same secret on any device.</p>
+
+            <div class="row">
+              <input type="text" id="app-secret" placeholder="Enter a unique journey secret" />
+              <button id="load-backend" class="secondary-btn">Load journey</button>
+              <!-- <button id="save-backend" class="primary-btn">Save journey</button> -->
+            </div>
+          </label>
+          <label>
+            Journey title
+            <input type="text" id="trip-name" placeholder="New journey name" />
+          </label>
+          <label>
+            Load saved journey
+            <select id="trip-select"></select>
+          </label>
+          <div class="button-row">
+            <button id="new-trip" class="secondary-btn">New trip</button>
+            <button id="save-trip" class="primary-btn">Save journey</button>
+            <button id="delete-trip" class="secondary-btn danger-btn">Delete journey</button>
+          </div>
+        </div>
+      </section>
+      <section class="panel itinerary-panel">
+        <h2>Plan Your Itinerary</h2>
+        <form id="itinerary-form" class="card form-card">
+          <div class="row">
+            <label>
+              Day / Date
+              <input type="text" id="item-day" placeholder="24-May-2026 (Sun)" />
+            </label>
+            <label>
+              Time
+              <input type="text" id="item-time" placeholder="09:00" />
+            </label>
+          </div>
+          <label>
+            Location / Activity
+            <input type="text" id="item-location" placeholder="Zermatt hiking" />
+          </label>
+          <label>
+            Notes
+            <div class="format-toolbar">
+              <button type="button" id="format-bold">B</button>
+              <button type="button" id="format-italic">I</button>
+              <button type="button" id="format-underline">U</button>
+              <button type="button" id="format-heading">H</button>
+              <button type="button" id="format-blue">Blue</button>
+              <button type="button" id="format-pink">Pink</button>
+              <button type="button" id="format-rose">Rose</button>
+              <button type="button" id="format-amber">Amber</button>
+              <button type="button" id="format-green">Green</button>
+              <button type="button" id="format-gold">Gold</button>
+              <button type="button" id="format-link">Link</button>
+            </div>
+            <textarea id="item-notes" rows="1" placeholder="Add packing reminders, transport, reservations..."></textarea>
+          </label>
+          <div class="button-row">
+            <button type="submit" class="primary-btn">Save itinerary item</button>
+          </div>
+          <label>
+            Upload itinerary PDF or text
+            <input type="file" id="itinerary-file" accept=".pdf,.txt" />
+          </label>
+          <p class="hint">Upload your ready-made itinerary and extract text to import trip items faster.</p>
+          <label>
+            Extracted itinerary preview
+            <textarea id="itinerary-extracted" rows="4" placeholder="Upload a PDF or text file to see extracted itinerary details."></textarea>
+          </label>
+          <div class="button-row">
+            <button id="import-itinerary" class="secondary-btn">Import extracted itinerary</button>
+          </div>
+        </form>
+
+        <div id="itinerary-list" class="list-stack"></div>
+      </section>
+
+      <section class="panel receipts-panel">
+        <h2>Receipts & Expenses</h2>
+        <div class="card form-card">
+          <label>
+            Participants
+            <div class="participants-row">
+              <input type="text" id="participant-name" placeholder="Add a name" />
+              <button id="add-participant" class="secondary-btn">Add</button>
+            </div>
+          </label>
+          <div id="participants-list" class="tag-list"></div>
+        </div>
+
+        <div class="card form-card">
+          <label>
+            Upload receipt file
+            <input type="file" id="receipt-file" accept=".txt,.csv,image/*" />
+          </label>
+          <p class="hint">Text/CSV receipts are auto-parsed. Image uploads are stored for reference.</p>
+          <label>
+            Receipt note or pasted text
+            <textarea id="receipt-text" rows="3" placeholder="Paste receipt text or add a short note"></textarea>
+          </label>
+          <label>
+            Amount
+            <input type="number" id="receipt-amount" placeholder="0.00" step="0.01" min="0" />
+          </label>
+          <label>
+            Payer paid
+            <select id="receipt-payer"></select>
+          </label>
+          <label class="inline-checkbox">
+            <input type="checkbox" id="receipt-split-all" checked />
+            Equal split includes all participants
+          </label>
+          <label>
+            Split method
+            <select id="receipt-split-mode">
+              <option value="equal">Equal split</option>
+              <option value="custom">Custom amount split</option>
+            </select>
+          </label>
+          <div id="receipt-debt-options" class="debt-options"></div>
+          <div class="button-row">
+            <button id="add-receipt" class="primary-btn">Save receipt entry</button>
+          </div>
+        </div>
+
+        <div id="receipts-list" class="list-stack"></div>
+      </section>
+      <!-- <section class="panel history-panel">
+        <h2>Trip history</h2>
+        <div class="card list-item" id="trip-history-placeholder"><p>Saved journeys are available in the trip manager above.</p></div>
+      </section> -->
+
+      <section class="panel summary-panel">
+        <h2>Payment Summary</h2>
+        <div class="card summary-card">
+          <div class="summary-row">
+            <span>Total spent</span>
+            <strong id="total-spent">$0.00</strong>
+          </div>
+          <div class="summary-row">
+            <span>Outstanding owed</span>
+            <strong id="split-amount">$0.00</strong>
+          </div>
+        </div>
+        <div id="balances-list" class="list-stack"></div>
+        <div id="owes-breakdown" class="list-stack"></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="bottom-actions">
+    <button id="bottom-save-journey" class="primary-btn">Save journey</button>
+  </div>
+  <button id="scroll-top" class="scroll-top-btn" aria-label="Scroll to top">Top</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.9.179/pdf.min.js" integrity="sha512-LxODa7FDLx6XE0QJvT3OR3SPiH7cVcoOeWLA7YRCnqtmc6CcIel7t/0wGAdY70iE5aqCQYsj2TYNDe2nQ2u+3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="app.js"></script>
+</body>
+</html>

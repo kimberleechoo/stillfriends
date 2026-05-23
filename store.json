@@ -1,0 +1,87 @@
+{
+  "cheeses": {
+    "trip": {
+      "id": "1779472083085-a02b3723730df8",
+      "name": "Switzerland 🧀",
+      "itinerary": [
+        {
+          "id": "1779510324615-9e0df40c858a5",
+          "day": "31-May-2026 (Sun)",
+          "time": "",
+          "location": "Zurich Departure",
+          "notes": "Base: Zurich\n\nActivities: • Check-out\n• Train to Zurich Airport\n• Airport roaming / dinner before flight\n\nTransport: Train Interlaken > Zurich Airport (~2h)\n\nNotes: Flight departure 22:00"
+        },
+        {
+          "id": "1779510324610-5d3ecb78484028",
+          "day": "30-May-2026 (Sat)",
+          "time": "",
+          "location": "Interlaken & Grindelwald First",
+          "notes": "Base: Wilderswil\n\nActivities: • 10AM paragliding\n• Explore Interlaken town\n• Train to Grindelwald\n• Gondola to First\n• First Cliff Walk\n\nTransport: Train Interlaken > Grindelwald (~35min)\n\nNotes: Best combo alpine activity day\n"
+        },
+        {
+          "id": "1779510324604-f56e58b2188678",
+          "day": "29-May-2026 (Fri)",
+          "time": "",
+          "location": "Oeschinensee Lake",
+          "notes": "Base: Wilderswil\n\nActivities: • Train to Kandersteg\n• Cable car up mountain\n• Scenic lake walk\n• Picnic by the water\n• Optional rowing boat\n\nTransport: Train Interlaken > Kandersteg (~1h20)\n\nNotes: One of Switzerland’s most beautiful lakes\n"
+        },
+        {
+          "id": "1779510324600-544b7ec56c4958",
+          "day": "28-May-2026 (Thu)",
+          "time": "",
+          "location": "Interlaken + Lauterbrunnen / Mürren",
+          "notes": "Base: Wilderswil — Jungfrau Hotel\n\nActivities: • Scenic train journey to Interlaken\n• Hotel check-in\n• Explore town centre\n• Option A: Lauterbrunnen > Mürren hike\n• Option B: Gschwandtenmaad Rosenlaui Valley\n• Option C: Slow walk around Mürren village\n\nTransport: Train Lausanne > Interlaken (~2h)\n\nNotes: Travel + chill day\n"
+        },
+        {
+          "id": "1779510324597-b5e795dc9bfab8",
+          "day": "27-May-2026 (Wed)",
+          "time": "",
+          "location": "Montreux + Lake Geneva",
+          "notes": "Base: Lausanne\n\nActivities: • Explore Lausanne old town\n• Train to Montreux\n• Montreux promenade walk\n• Visit Chillon Castle (optional)\n\nTransport: Train Lausanne > Montreux (~45min)\n\nNotes: Short relaxed scenic day\n"
+        },
+        {
+          "id": "1779510324593-c2d4a45400c4a8",
+          "day": "26-May-2026 (Tue)",
+          "time": "",
+          "location": "Zermatt & Matterhorn",
+          "notes": "Base: Lausanne\n\nActivities: • Early train via Visp\n• Explore Zermatt village\n• View Matterhorn\n• Optional Gornergrat railway viewpoint\n• Hike from Gornergrat to Riffelberg\n• Blue hour photography at Kirchbrücke bridge\n\nTransport: Train Lausanne > Zermatt (~2h15 each way)\n\nNotes: Optional Gornergrat Railway (~CHF66 round trip with Half Fare)\n"
+        },
+        {
+          "id": "1779510324589-165afbd2b058c8",
+          "day": "25-May-2026 (Mon)",
+          "time": "",
+          "location": "Bern",
+          "notes": "Base: Lausanne\n\nActivities: • Walk UNESCO old town streets\n• Zytglogge clock tower\n• Rose Garden viewpoint\n• Riverside walk along Aare river\n• Bear Park\n\nTransport: Train Lausanne > Bern (~1h15)\n\nNotes: Bern pinned map: https://maps.app.goo.gl/Gng5hzTMzm6AH6XT6\n"
+        },
+        {
+          "id": "1779510324585-f986a64ba43f9",
+          "day": "24-May-2026 (Sun)",
+          "time": "",
+          "location": "Lausanne Old Town & Ouchy",
+          "notes": "Base: Lausanne — Swiss Chocolate by Fassbind Lausanne\n\nActivities: • Arrive Zurich 13:20\n• Train to Lausanne\n• Hotel check-in\n• Evening walk along Ouchy promenade by Lake Geneva\n\nTransport: Train Zurich Airport > Lausanne (~2h10)\n\nNotes: Buy point-to-point ticket Zurich Airport > Lausanne\n"
+        }
+      ],
+      "participants": [
+        "chooK",
+        "chooB",
+        "chooN"
+      ],
+      "receipts": [],
+      "createdAt": "2026-05-22T17:48:03.085Z",
+      "updatedAt": "2026-05-23T04:25:51.565Z"
+    },
+    "updatedAt": "2026-05-23T04:25:51.571Z"
+  },
+  "ny": {
+    "trip": {
+      "id": "1779472083085-a02b3723730df8",
+      "name": "NY",
+      "itinerary": [],
+      "participants": [],
+      "receipts": [],
+      "createdAt": "2026-05-22T17:48:03.085Z",
+      "updatedAt": "2026-05-22T17:52:06.566Z"
+    },
+    "updatedAt": "2026-05-22T17:52:06.569Z"
+  }
+}
